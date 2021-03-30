@@ -304,6 +304,12 @@ div.step--last {
     padding: 5px;
     text-align: center;
     margin: 0px;
+    transition: .14s;
+}
+
+.step__title--status-icon:hover {
+    top: -17px;
+    border: 2px solid var(--main-color)
 }
 
 .step__title--status-icon-completed {
