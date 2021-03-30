@@ -233,11 +233,6 @@ h1 {
     padding: 0;
   }
 
-.example {
-    width: 80%;
-    margin: 50px auto 30px auto;
-}
-
 .progress__container {
     width: 100%;
     background-color: var(--progressbar-empty);
@@ -260,7 +255,7 @@ h1 {
 
 .progress {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 5%;
 }
 
 .step {

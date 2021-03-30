@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function(){
         stepContent.classList.add("step__content")
         stepTitle = document.createElement("DIV")
         stepTitle.classList.add("step__title")
-        stepTitle.innerHTML = "Gymso";
+        stepTitle.innerHTML = trida.start;
         var stepIcon = document.createElement("span")
         stepIcon.classList.add("step__title--status-icon", "step__title--status-icon-completed", "step__title--status-icon--first")
         stepTitle.appendChild(stepIcon)
@@ -146,32 +146,30 @@ document.addEventListener("DOMContentLoaded", function(){
         trida.targets.forEach(cil => {
             var jmeno = cil[0];
             var vzdalenost = cil[1];
-            var novyCil = document.createElement("DIV");
-            novyCil.classList.add("cil");
-    
+
             // var odsazeni = Math.ceil((vzdalenost/trida.allWay)*100);
             // novyCil.style.cssText =  `left:${odsazeni}%`;
             // novyCil.innerHTML = jmeno;
             // graf.appendChild(novyCil);
             polozka = document.createElement("li");
-            polozka.innerHTML = jmeno + "(" + vzdalenost + " km)";
+            polozka.innerHTML = jmeno + " (" + vzdalenost + " km)";
             if (vzdalenost<=trida.walked) {
                 polozka.classList.add("hotovo");
             } else {
                 polozka.classList.add("nehotovo");
             }
-            sumary.appendChild(polozka);
+            seznam.appendChild(polozka);
         });
     });
 
     //Kruh školy
-    zprava = `Obvod země je ${obvodZeme} km. Naplánovali jsme si celkem ${celkemNaplanovano} km, z toho jsme zatím urazili ${celkemUrazeno} km.`
+    zprava = `Naplánovali jsme si celkem ${celkemNaplanovano} km, z toho jsme zatím urazili ${celkemUrazeno} km. Z obvodu Země (${obvodZeme} km) to tvoří`
     document.getElementById("zprava").innerHTML = zprava;
     document.getElementById("c").content = zprava;
     var el = document.getElementById('graph'); 
 
     var options = {
-        percent:  Math.floor(celkemUrazeno/celkemNaplanovano*100),
+        percent:  Math.floor(celkemUrazeno/obvodZeme*100),
         size: el.getAttribute('data-size') || 320,
         lineWidth: el.getAttribute('data-line') || 15,
         rotate: el.getAttribute('data-rotate') || 0

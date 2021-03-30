@@ -6,12 +6,13 @@
         <title>Cesta kolem světa</title>
         <meta property="og:type" content="Cesta kolem světa">
         <meta property="og:title" content="Gymso - Cesta kolem světa">
-        <meta property="og:description" id="c" content="Cesta kolem světa za">
+        <meta property="og:description" id="c" content="Dokážeme za 80 dní obejít Zemi?">
         <meta property="og:url" content="maklauscovid.tk">
         <link rel="stylesheet" href="styly.css">
         <script>
             class Trida {
-                constructor(name, targets, walked) {
+                constructor(name, targets, walked, start="Gymso") {
+                    this.start = start;
                     this.name = name;
                     this.targets = targets;
                     this.walked = walked;
@@ -74,12 +75,12 @@
                 269),
                 new Trida("1.C",
                 [["Transsibiřská magistrála (Moskva-Vladivostok)",9288]],
-                844),
+                844, "Moskva"),
                 new Trida("2.C",
                 [["Tibet",6360]],
                 533),
                 new Trida("3.C",
-                [["Cesta do středu země",6378]],
+                [["Cesta do středu Země", 6378]],
                 264),
                 new Trida("2.D",
                 [["Mnichov",18],["Petrohrad",66],["Krakov",84],["Srbsko",120],["Mexiko",124],["Velká Amerika",126]],
@@ -119,7 +120,7 @@
             </div>
             <p></p>
             <img src="./images/LOGO1.jpg" style="max-width: 100%; min-width: 100%;">
-            <h1 id="maintitle">Cesta kolem světa za 80 dní <br> Den </h1>
+            <h1 id="maintitle">Cesta kolem světa za 80 dní<br>Den </h1>
             <div id="skola">
                 <h2> Celkový přehled školy</h2>
                 <div id="zprava">Obvod země je 40075 km. Dokážeme tuto vzdálenost společně překonat? Zatím jsme urazili 0 km.</div>
