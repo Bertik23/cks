@@ -2,7 +2,6 @@ var obvodZeme = 40075;
 var celkemUrazeno = 0;
 var celkemNaplanovano = 0;
 
-
 // window.addEventListener('resize', function () { 
 //     "use strict";
 //     window.location.reload(); 
@@ -166,7 +165,9 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     //Kruh školy
-    document.getElementById("zprava").innerHTML = `Obvod země je ${obvodZeme} km. Naplánovali jsme si celkem ${celkemNaplanovano} km, z toho jsme zatím urazili ${celkemUrazeno} km.`;
+    zprava = `Obvod země je ${obvodZeme} km. Naplánovali jsme si celkem ${celkemNaplanovano} km, z toho jsme zatím urazili ${celkemUrazeno} km.`
+    document.getElementById("zprava").innerHTML = zprava;
+    document.getElementById("c").content = zprava;
     var el = document.getElementById('graph'); 
 
     var options = {
