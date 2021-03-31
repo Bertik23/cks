@@ -37,8 +37,13 @@ document.addEventListener("DOMContentLoaded", function(){
         tridyWrapper.innerHTML += `<div class="trida-main" id="${trida.divName}">`
         var mainDiv = document.getElementById(trida.divName);
         mainDiv.innerHTML = `<h2>${trida.name}</h2>`;
-        document.getElementById("prehledtrid").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`;
-
+        if (trida.divName == "ucitele"){
+            document.getElementById("prehledtrid").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`
+        } else if (trida.divName.endsWith("E")){
+            document.getElementById("chodov").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`;
+        } else {
+            document.getElementById("sokolov").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`;
+        }
 
         //Nový graf
         var odsazeni = Math.ceil((trida.walked/trida.allWay)*100);

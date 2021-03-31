@@ -1,6 +1,7 @@
 @media (prefers-color-scheme: light){
     :root{
         --main-color: #0077BB;
+        --darker-main: #005599;
         --progress-completed: green;
         --progressbar-empty: #ccc;
         --progressbar-full: #4CAF50;
@@ -15,6 +16,7 @@
 @media (prefers-color-scheme: dark){
     :root{
         --main-color: #0077BB;
+        --darker-main: #005599;
         --progress-completed: rgb(25, 128, 25);
         --progressbar-empty: #ccc;
         --progressbar-full: #4CAF50;
@@ -212,22 +214,23 @@ h1 {
     }
 }
 #prehledtrid {
-    background-color: var(--main-color); 
+    background-color: var(--main-color);
+    height: 100%;
+    overflow: hidden;
+    border-radius: 0px 0px 5px 5px;
+    margin-bottom: 10px;
 }
 
 #prehledtrid a {
-    min-width: 50px;
-    line-height: 30px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--main-color);
-    margin: 10px;
-    margin-top: 15px;
-    display: inline-block;
-    border-radius: 5px;
-    background: white;
-    padding: 2px;
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
+
+
 * {
     margin: 0;
     padding: 0;
@@ -347,3 +350,73 @@ div.step--last {
     opacity: 100;
     z-index: 100;
 }
+
+ /* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+#prehledtrid a:hover, .dropdown:hover .dropbtn {
+  background-color: var(--darker-main);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+} 
