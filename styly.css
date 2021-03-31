@@ -197,15 +197,7 @@ span.procenta {
     font-weight:100;
     margin-left:5px;
 }
-h1 {
-    font-size: 3em;
-    text-align: center;
-    margin-top: -225px;
-    padding-bottom: 30px;
-    color: white;
-    text-shadow: 5px 5px 2px gray;
-    background-color: var(--main-color);
-}
+
 
 @media only screen and (max-width: 1100px) {
     h1 {
@@ -216,6 +208,9 @@ h1 {
 #prehledtrid {
     background-color: var(--main-color);
     height: 100%;
+    width: 98%;
+    display: table;
+    margin: auto;
     overflow: hidden;
     border-radius: 0px 0px 5px 5px;
     margin-bottom: 10px;
@@ -395,9 +390,10 @@ div.step--last {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  background-color: var(--main-color);
+  transform: translateX(25%);
+  box-shadow: 0px 5px 5px var(--shadow-color);
+  border-radius: 5px;
   z-index: 1;
 }
 
@@ -420,3 +416,49 @@ div.step--last {
 .dropdown:hover .dropdown-content {
   display: block;
 } 
+
+.dropdown-content li{
+    list-style: none;
+}
+
+.mainimg{
+    width: 100%;
+    display: table;
+    margin: auto;
+    border-radius: 5px 5px 0px 0px;
+    box-shadow: 0px 5px 5px var(--shadow-color);
+}
+
+.title{
+    display: table;
+    margin: auto;
+    border-radius: 15px;
+    padding: 0px;
+    min-width: 900px;
+    background-color: var(--background-trida);
+    box-shadow: 0px 5px 5px var(--shadow-color);
+    box-sizing: border-box;
+    color: var(--text);
+    position: relative;
+    width: 95%;
+}
+
+.title h1{
+    position: relative;
+    font-size: 3em;
+    text-align: center;
+    border-radius: 0px 0px 15px 15px;
+    background: var(--main-color);
+    /* margin-bottom: 0px;
+    margin-left:-30px;
+    margin-right:-30px; */
+    text-align: center;
+    color: rgb(255, 255, 255);
+    line-height: 1.5em;
+}
+
+.grafImage {
+    transform: translateX(-50%);
+    width: 30px;
+    margin-bottom: 5px;
+}

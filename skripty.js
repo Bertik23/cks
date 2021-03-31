@@ -40,15 +40,20 @@ document.addEventListener("DOMContentLoaded", function(){
         if (trida.divName == "ucitele"){
             document.getElementById("prehledtrid").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`
         } else if (trida.divName.endsWith("E")){
-            document.getElementById("chodov").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`;
+            document.getElementById("chodov").innerHTML += `<li><a href="#${trida.divName}">${trida.name}</a></li>`;
         } else {
-            document.getElementById("sokolov").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`;
+            document.getElementById("sokolov").innerHTML += `<li><a href="#${trida.divName}">${trida.name}</a></li>`;
         }
 
         //Nový graf
         var odsazeni = Math.ceil((trida.walked/trida.allWay)*100);
 
         var newGraf = document.createElement("DIV")
+        var img = document.createElement("img")
+        img.src = "images/bezecGreen.png"
+        img.classList.add("grafImage")
+        mainDiv.appendChild(img)
+        img.style.cssText = `margin-left: ${odsazeni}%;`
         newGraf.classList.add("progress")
         mainDiv.appendChild(newGraf)
         var newGrafContainer = document.createElement("DIV")
@@ -168,7 +173,12 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     //Kruh školy
-    zprava = `Naplánovali jsme si celkem ${celkemNaplanovano} km, z toho jsme zatím urazili ${celkemUrazeno} km. Z obvodu Země (${obvodZeme} km) to tvoří`
+    if (celkemUrazeno>=obvodZeme) {
+        zprava = `Hlavní cíl splněn! Obvod země je ${obvodZeme} km. A my jsme ji celou obešli! Naplánovali jsme si celkem ${celkemNaplanovano} km a urazili jsme <b>${celkemUrazeno} km</b>. To je ${Math.round(100*celkemUrazeno/obvodZeme)/100}x kolem země.`;
+    } else {
+        zprava = `Obvod země je ${obvodZeme} km. Dokážeme tuto vzdálenost společně překonat? Naplánovali jsme si celkem ${celkemNaplanovano} km, z toho jsme zatím urazili <b>${celkemUrazeno} km</b>.`;    
+    }
+    // zprava = `Naplánovali jsme si celkem ${celkemNaplanovano} km, z toho jsme zatím urazili ${celkemUrazeno} km. Z obvodu Země (${obvodZeme} km) to tvoří`
     document.getElementById("zprava").innerHTML = zprava;
     document.getElementById("c").content = zprava;
     var el = document.getElementById('graph'); 
