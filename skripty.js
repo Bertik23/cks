@@ -220,8 +220,9 @@ document.addEventListener("DOMContentLoaded", function(){
             ctx.lineWidth = lineWidth
             ctx.stroke();
     };
-    console.log(window.matchMedia("(prefers-color-scheme: dark)").matches)
-    if (window.matchMedia("(prefers-color-scheme: light)").matches){
+    // console.log(window.matchMedia("(prefers-color-scheme: dark)").matches)
+    // console.log(document.documentElement.getAttribute("data-theme"))
+    if (document.documentElement.getAttribute("data-theme") === "light"){
         drawCircle('#ccc', options.lineWidth, 100 / 100);
     } else {
         drawCircle('#323232', options.lineWidth, 100 / 100);
