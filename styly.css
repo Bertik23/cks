@@ -407,6 +407,12 @@ div.step--last {
   z-index: 1;
   overflow: scroll;
   max-height: 90vh;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.dropdown-content::-webkit-scrollbar{
+    display: none;
 }
 
 /* Links inside the dropdown */
