@@ -37,12 +37,8 @@ document.addEventListener("DOMContentLoaded", function(){
         tridyWrapper.innerHTML += `<div class="trida-main" id="${trida.divName}">`
         var mainDiv = document.getElementById(trida.divName);
         mainDiv.innerHTML = `<h2>${trida.name}</h2>`;
-        if (trida.divName == "ucitele"){
-            document.getElementById("prehledtrid").innerHTML += `<a href="#${trida.divName}">${trida.name}</a>`
-        } else if (trida.divName.endsWith("E")){
-            document.getElementById("chodov").innerHTML += `<li><a href="#${trida.divName}">${trida.name}</a></li>`;
-        } else {
-            document.getElementById("sokolov").innerHTML += `<li><a href="#${trida.divName}">${trida.name}</a></li>`;
+        if (trida.divName != "ucitele"){
+            document.getElementById(trida.name[trida.name.length-1]).innerHTML += `<li><a href="#${trida.divName}">${trida.name}</a></li>`;
         }
 
         //Nový graf
@@ -69,10 +65,13 @@ document.addEventListener("DOMContentLoaded", function(){
         stepContent.classList.add("step__content")
         stepTitle = document.createElement("DIV")
         stepTitle.classList.add("step__title")
-        stepTitle.innerHTML = trida.start;
+        var stepText = document.createElement("span")
+        stepText.classList.add("step-first-text")
+        stepText.textContent = trida.start;
         var stepIcon = document.createElement("span")
         stepIcon.classList.add("step__title--status-icon", "step__title--status-icon-completed", "step__title--status-icon--first")
         stepTitle.appendChild(stepIcon)
+        stepTitle.appendChild(stepText)
         stepContent.appendChild(stepTitle)
         step.appendChild(stepContent)
         newGrafBar.appendChild(step)
@@ -121,12 +120,15 @@ document.addEventListener("DOMContentLoaded", function(){
         stepContent.classList.add("step__content")
         stepTitle = document.createElement("DIV")
         stepTitle.classList.add("step__title")
-        stepTitle.innerHTML = trida.targets[cilu-1][0];
+        var stepText = document.createElement("span")
+        stepText.classList.add("step-last-text")
+        stepText.textContent = trida.targets[cilu-1][0];
         var stepIcon = document.createElement("span")
         stepIcon.classList.add("step__title--status-icon", "step__title--status-icon--last")
         if (trida.walked >= trida.targets[cilu-1][1]){
             stepIcon.classList.add("step__title--status-icon-completed")
         }
+        stepTitle.appendChild(stepText)
         stepTitle.appendChild(stepIcon)
         stepContent.appendChild(stepTitle)
         step.appendChild(stepContent)

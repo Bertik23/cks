@@ -90,25 +90,25 @@
                 85),
                 new Trida("2.E",
                 [["Berlín",258],["Amsterdam",835],["Brusel",1073],["Remeš",1394],["Londýn",1574]],
-                113),
+                113, "Chodov"),
                 new Trida("3.E",
                 [["Plzeň",82],["České Budějovice",214],["Vídeň",400],["Bratislava",450],["Budapešť",880]],
-                160),
+                160, "Chodov"),
                 new Trida("4.E",
                 [["Paříž",765],["Miláno",1405],["Istanbul",3075],["Kyjev",4134],["Bratislava",5140],["Chodov",5555]],
-                267),
+                267, "Chodov"),
                 new Trida("5.E",
                 [["Vatikán",920]],
-                0),
+                0, "Chodov"),
                 new Trida("6.E",
                 [["Wolverhampton",1062],["Doncaster",1186],["Holmes Chapel",1275],["Bradford",1350],["Mullingar",1720]],
-                286),
+                286, "Chodov"),
                 new Trida("7.E",
                 [["Helsinky",1346],["Stockholm",1744],["Oslo",2163],["Reykjavik",3908]],
-                327),
+                327, "Chodov"),
                 new Trida("8.E",
                 [["Ústí nad Labem",100],["Liberec",174],["Hradec Králové",258],["Pardubice",278]],
-                0)
+                0, "Chodov")
             ];
         </script>
     </head>
@@ -117,14 +117,30 @@
             <div id="prehledtrid">
                 <a href="#" id="showinfo" onclick="showInfo();"><b>ⓘ Informace </b></a>&nbsp;
                 <input onclick="modeSwitcher()" name="modeSwitcher" id="theme-toggle" type="checkbox"><label for="theme-toggle" class="changeMode">Mode</label><script src="mode-switcher.js">modeSwitcher()</script><script type="text/javascript" src="skripty.js"></script>
+                <a href="#ucitele">Učitelé</a>
                 <div class="dropdown">
-                    <button class="dropbtn">Sokolov</button>
-                    <div id="sokolov" class="dropdown-content">
+                    <button class="dropbtn">A</button>
+                    <div id="A" class="dropdown-content">
                     </div>
                 </div>
                 <div class="dropdown">
-                    <button class="dropbtn">Chodov</button>
-                    <div id="chodov" class="dropdown-content">
+                    <button class="dropbtn">B</button>
+                    <div id="B" class="dropdown-content">
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">C</button>
+                    <div id="C" class="dropdown-content">
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">D</button>
+                    <div id="D" class="dropdown-content">
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">E</button>
+                    <div id="E" class="dropdown-content">
                     </div>
                 </div>
             </div>
