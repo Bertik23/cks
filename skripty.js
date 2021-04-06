@@ -34,8 +34,9 @@ document.addEventListener("DOMContentLoaded", function(){
     var tridyWrapper = document.getElementById("wrapper")
     tridy.forEach(trida => {
         celkemUrazeno+=trida.walked;
-        tridyWrapper.innerHTML += `<div class="trida-main" id="${trida.divName}">`
-        var mainDiv = document.getElementById(trida.divName);
+        tridyWrapper.innerHTML += `<span class="tridaLink" id="${trida.divName}"></span>`
+        tridyWrapper.innerHTML += `<div class="trida-main" id="${trida.divName}Div"></div>`
+        var mainDiv = document.getElementById(`${trida.divName}Div`);
         mainDiv.innerHTML = `<h2>${trida.name}</h2>`;
         if (trida.divName != "ucitele"){
             document.getElementById(trida.name[trida.name.length-1]).innerHTML += `<li><a href="#${trida.divName}">${trida.name}</a></li>`;
